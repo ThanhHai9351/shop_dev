@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom"
 import Logo from "@/components/icon/logo"
 import LoginForm from "@/pages/auth/login/login-form"
+import { Helmet } from "react-helmet-async"
 
 const LoginPage = () => {
   return (
     <>
+      <Helmet>
+        <title>Login</title>
+        <link rel="canonical" href="/account/login" />
+        <meta name='description' content='Sign in to Shop3Man.' />
+        <meta name='Login' content='Sign in to Shop3Man.' />
+      </Helmet>
       <div className='container relative h-screen md:flex md:flex-row lg:grid lg:max-w-full lg:grid-cols-2 lg:px-0'>
         <div className='relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex'>
           <div className='absolute inset-0 bg-zinc-900' />
@@ -19,7 +26,7 @@ const LoginPage = () => {
           <div className='relative z-20 mt-auto'>
             <blockquote className='space-y-2'>
               <footer className='text-sm'>
-                <p className='mb-3 text-xl'>Chào mừng bạn đến với hệ thống Shop3Man!</p>
+                <h1 className='mb-3 text-xl'>Chào mừng bạn đến với hệ thống Shop3Man!</h1>
                 <p>
                   Vui lòng đăng nhập để truy cập vào các tính năng và dịch vụ của chúng tôi. Nếu bạn chưa có tài khoản,
                   hãy đăng ký để trải nghiệm ngay hôm nay!
@@ -35,7 +42,7 @@ const LoginPage = () => {
               <Logo width={75} />
             </div>
             <div className='flex flex-col space-y-2 text-center'>
-              <h1 className='text-2xl font-semibold tracking-tight'>Login</h1>
+              <p className='text-2xl font-semibold tracking-tight'>Login</p>
               <p className='text-sm text-muted-foreground'>Enter your credentials below to access.</p>
             </div>
             <LoginForm />
